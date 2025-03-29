@@ -38,26 +38,24 @@ function RootInner({ children }: PropsWithChildren) {
   const { setTheme } = useTheme();
 
   useEffect(() => {
-    setTheme(isDark ? 'dark' : 'light');
+    setTheme(false ? 'dark' : 'light');
   }, [isDark, setTheme]);
 
   return (
     <AppRoot
-      appearance={isDark ? 'dark' : 'light'}
+      appearance={false ? 'dark' : 'light'}
       platform={['macos', 'ios'].includes(lp.platform) ? 'ios' : 'base'}
     >
-      <div className="flex flex-col bg-background min-h-screen">
-        <MobileHeader
-          title="App Title"
-          showBack={showBack}
-          onBack={() => router.back()}
-          showSearch={!['/', '/more'].includes(pathname)}
-          notifications={3}
-          onNotificationsClick={() => router.push('/notifications')}
-        />
-        <main className="flex-1 pb-20">{children}</main>
-        <BottomNavigation />
-      </div>
+      <MobileHeader
+        title="App Title"
+        showBack={showBack}
+        onBack={() => router.back()}
+        showSearch={!['/', '/more'].includes(pathname)}
+        notifications={3}
+        onNotificationsClick={() => router.push('/notifications')}
+      />
+      <main className="flex-1 p-4 pt-16 pb-20">{children}</main>
+      <BottomNavigation />
     </AppRoot>
   );
 }

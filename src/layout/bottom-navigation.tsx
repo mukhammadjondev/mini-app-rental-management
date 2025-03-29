@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
   Home,
@@ -9,8 +8,9 @@ import {
   CreditCard,
   MoreHorizontal,
 } from 'lucide-react';
+import { Tabbar } from '@telegram-apps/telegram-ui';
 import { t } from '@/lib/translations';
-import { cn } from '@/lib/utils';
+import { Link } from '@/components/Link/Link';
 
 const navItems = [
   {
@@ -55,28 +55,20 @@ export function BottomNavigation() {
   const pathname = usePathname();
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t">
-      <div className="grid grid-cols-5 h-16">
-        {navItems.map(({ label, icon: Icon, path, activePaths }) => {
-          const isActive = activePaths.some(p =>
-            p === '/' ? pathname === '/' : pathname.startsWith(p)
-          );
+    <Tabbar className="z-50">
+      {navItems.map(({ label, icon: Icon, path, activePaths }) => {
+        const isActive = activePaths.some(p =>
+          p === '/' ? pathname === '/' : pathname.startsWith(p)
+        );
 
-          return (
-            <Link
-              key={label}
-              href={path}
-              className={cn(
-                'flex flex-col items-center justify-center gap-1',
-                isActive ? 'text-primary' : 'text-muted-foreground'
-              )}
-            >
+        return (
+          <Tabbar.Item key={label} text={label} selected={isActive}>
+            <Link href={path}>
               <Icon className="h-5 w-5" />
-              <span className="text-xs">{label}</span>
             </Link>
-          );
-        })}
-      </div>
-    </div>
+          </Tabbar.Item>
+        );
+      })}
+    </Tabbar>
   );
 }

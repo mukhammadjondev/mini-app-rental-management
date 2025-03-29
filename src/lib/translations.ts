@@ -9,6 +9,7 @@ export const uzTranslations = {
   search: 'Qidirish',
   filter: 'Filtrlash',
   all: 'Barchasi',
+  info: "Ma'lumot",
   details: 'Tafsilotlar',
   confirm: 'Tasdiqlash',
   confirmDelete: "O'chirishni tasdiqlaysizmi?",

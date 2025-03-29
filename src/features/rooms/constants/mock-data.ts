@@ -1,0 +1,162 @@
+import { IRoom, RoomStatus } from '@/types';
+
+export const mockRooms: IRoom[] = [
+  {
+    _id: 'r1',
+    houseId: 'h1',
+    roomNumber: '101',
+    monthlyRent: 300,
+    status: RoomStatus.OCCUPIED,
+    maxTenants: 2,
+    currentTenants: ['t1'],
+    houseName: '123 Main Street',
+  },
+  {
+    _id: 'r2',
+    houseId: 'h1',
+    roomNumber: '102',
+    monthlyRent: 250,
+    status: RoomStatus.OCCUPIED,
+    maxTenants: 1,
+    currentTenants: ['t2'],
+    houseName: '123 Main Street',
+  },
+  {
+    _id: 'r3',
+    houseId: 'h1',
+    roomNumber: '103',
+    monthlyRent: 350,
+    status: RoomStatus.VACANT,
+    maxTenants: 2,
+    currentTenants: [],
+    houseName: '123 Main Street',
+  },
+  {
+    _id: 'r4',
+    houseId: 'h1',
+    roomNumber: '201',
+    monthlyRent: 320,
+    status: RoomStatus.OCCUPIED,
+    maxTenants: 2,
+    currentTenants: ['t3', 't4'],
+    houseName: '123 Main Street',
+  },
+  {
+    _id: 'r5',
+    houseId: 'h1',
+    roomNumber: '202',
+    monthlyRent: 280,
+    status: RoomStatus.MAINTENANCE,
+    maxTenants: 1,
+    currentTenants: [],
+    houseName: '123 Main Street',
+  },
+  {
+    _id: 'r7',
+    houseId: 'h2',
+    roomNumber: '101',
+    monthlyRent: 250,
+    status: RoomStatus.OCCUPIED,
+    maxTenants: 1,
+    currentTenants: ['t6'],
+    houseName: '456 Oak Avenue',
+  },
+  {
+    _id: 'r8',
+    houseId: 'h2',
+    roomNumber: '102',
+    monthlyRent: 280,
+    status: RoomStatus.OCCUPIED,
+    maxTenants: 1,
+    currentTenants: ['t7'],
+    houseName: '456 Oak Avenue',
+  },
+  {
+    _id: 'r9',
+    houseId: 'h2',
+    roomNumber: '201',
+    monthlyRent: 300,
+    status: RoomStatus.VACANT,
+    maxTenants: 2,
+    currentTenants: [],
+    houseName: '456 Oak Avenue',
+  },
+];
+
+export const mockTenants = [
+  {
+    id: 't1',
+    name: 'John Doe',
+    phone: '+1234567890',
+    startDate: '2023-01-15',
+    endDate: null,
+  },
+  {
+    id: 't3',
+    name: 'Mike Johnson',
+    phone: '+1122334455',
+    startDate: '2023-03-10',
+    endDate: null,
+  },
+  {
+    id: 't4',
+    name: 'Emily Davis',
+    phone: '+1555666777',
+    startDate: '2023-03-10',
+    endDate: null,
+  },
+];
+
+// Mock payment data
+export const mockPayments = [
+  {
+    id: 'p1',
+    tenantId: 't1',
+    tenantName: 'John Doe',
+    amount: 300,
+    date: '2023-02-01',
+    status: 'paid',
+    type: 'rent',
+    period: 'February 2023',
+  },
+  {
+    id: 'p2',
+    tenantId: 't1',
+    tenantName: 'John Doe',
+    amount: 300,
+    date: '2023-03-02',
+    status: 'paid',
+    type: 'rent',
+    period: 'March 2023',
+  },
+  {
+    id: 'p3',
+    tenantId: 't1',
+    tenantName: 'John Doe',
+    amount: 600,
+    date: '2023-01-15',
+    status: 'paid',
+    type: 'deposit',
+    period: null,
+  },
+];
+
+// Mock maintenance data
+export const mockMaintenance = [
+  {
+    id: 'm1',
+    title: 'Fix leaking faucet',
+    description: 'The bathroom faucet is leaking',
+    status: 'completed',
+    date: '2023-01-20',
+    cost: 50,
+  },
+  {
+    id: 'm2',
+    title: 'Replace light bulbs',
+    description: 'Replace all light bulbs in the room',
+    status: 'pending',
+    date: '2023-03-15',
+    cost: null,
+  },
+];
