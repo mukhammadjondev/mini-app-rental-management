@@ -1,13 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import {
-  Home,
-  Building,
-  Users,
-  CreditCard,
-  MoreHorizontal,
-} from 'lucide-react';
+import { Home, Building, Users, CreditCard } from 'lucide-react';
 import { Tabbar } from '@telegram-apps/telegram-ui';
 import { t } from '@/lib/translations';
 import { Link } from '@/components/Link/Link';
@@ -22,7 +16,7 @@ const navItems = [
   {
     label: t('properties'),
     icon: Building,
-    path: '/properties',
+    path: '/properties/houses',
     activePaths: ['/properties', '/houses', '/rooms'],
   },
   {
@@ -37,18 +31,18 @@ const navItems = [
     path: '/payments',
     activePaths: ['/payments', '/expenses'],
   },
-  {
-    label: t('more'),
-    icon: MoreHorizontal,
-    path: '/more',
-    activePaths: [
-      '/more',
-      '/statistics',
-      '/documents',
-      '/maintenance',
-      '/notifications',
-    ],
-  },
+  // {
+  //   label: t('more'),
+  //   icon: MoreHorizontal,
+  //   path: '/more',
+  //   activePaths: [
+  //     '/more',
+  //     '/statistics',
+  //     '/documents',
+  //     '/maintenance',
+  //     '/notifications',
+  //   ],
+  // },
 ];
 
 export function BottomNavigation() {

@@ -13,7 +13,7 @@ export const MetricCard = ({
   bgClass: string;
 }) => (
   <Card className={bgClass}>
-    <CardContent className="p-1">
+    <CardContent className="p-1 py-3">
       <div className="flex flex-col items-center text-center">
         {icon}
         <div className="text-xs text-muted-foreground">{title}</div>

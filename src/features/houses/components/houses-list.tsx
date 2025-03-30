@@ -83,7 +83,7 @@ export default function HousesList() {
             <Card
               key={house._id}
               className="cursor-pointer hover:bg-muted/50 transition-colors"
-              onClick={() => router.push(`/properties/house/${house._id}`)}
+              onClick={() => router.push(`/properties/houses/${house._id}`)}
             >
               <CardContent className="p-4 space-y-3">
                 {/* Address + Status */}

@@ -149,7 +149,7 @@ export default function RoomsList() {
                     variant="outline"
                     size="sm"
                     className="h-8"
-                    onClick={() => router.push(`/properties/room/${_id}`)}
+                    onClick={() => router.push(`/properties/rooms/${_id}`)}
                   >
                     {t('viewDetails')}
                   </Button>
