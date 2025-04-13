@@ -10,5 +10,6 @@ export const houseStatusColor: Record<HouseStatus, string> = {
 export const houseStatusOptions = [
   { label: t('all'), value: 'all' },
   { label: t('active'), value: HouseStatus.ACTIVE },
+  { label: t('inactive'), value: HouseStatus.INACTIVE },
   { label: t('maintenance'), value: HouseStatus.MAINTENANCE },
 ];
